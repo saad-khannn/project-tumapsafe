@@ -18,3 +18,9 @@ Angela has not fully acclimated to the city yet since she is relatively new to P
 She still doesn’t know as much about the city as she wants to know so she needs help feeling safer 
 when she’s going back to her apartment after some late activities on campus or a late night out with her friends. 
 She doesn’t want the fear of the unknown to come in the way of her studies or her social life.
+
+## Persona 2
+### Bill, a student 
+Bill, is 18 years old and freshman at Temple University and he is a computer science major. He likes to watch films, play video games and hang out with his colleagues. Bill is from New York and lives in apartment in north Philadelphia near the university because of the time management. He walks to and from classes every day to save time and money. 
+
+Bill is new to the city and he does not know the area where he lives that well. He takes 5 classes which he ends up going home late at night. Therefore, he wants to explore the city, so he needs help feeling safer when he is going back to his apartment. He wants to use technology which would help him to feel secure while walking and which area to avoid from the risk. 
