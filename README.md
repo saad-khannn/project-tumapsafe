@@ -63,6 +63,10 @@ Tam is a freshamn transfer student from India he is new to America and is excite
 ![User Persona Prof](Hannah.png)
 
 
+## Persona 6
+![User Persona Prof](Eric.png)
+
+
 
 
 
