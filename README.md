@@ -57,7 +57,7 @@ Bill is new to the city and he does not know the area where he lives that well. 
 
 
 ##Persona 4
-![User Persona Prof](Hannah.png)
+![User Persona Prof](Hannah.PNG)
 
 
 
