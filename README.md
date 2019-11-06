@@ -38,6 +38,10 @@ She doesn’t want the fear of the unknown to come in the way of her studies or 
 ### Bill, a student 
 Bill, is 18 years old and freshman at Temple University and he is a computer science major. He likes to watch films, play video games and hang out with his colleagues. Bill is from New York and lives in apartment in north Philadelphia near the university because of the time management. He walks to and from classes every day to save time and money. 
 
+## Persona 3
+### David
+![User Persona Prof](User_Persona_Prof.png)
+
 ## Use Case Diagram
 ![UML UseCase Diagram](MapSafe3.png)
 
