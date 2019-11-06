@@ -1,4 +1,19 @@
 # TU MapSafe
+## A Temple Campus Safety Mapping Mobile Application
+## Project Abstract
+_The goal for the project is to design an Android application to connect Temple campus users with existing safety and security services by way of a user-friendly mapped interface and swipe to corner dialing to emergency and non-emergency professionals for increased sense of safety. Additionally the app should receive TU alerts and represent their locations on the campus map in red when under alert and in green when the incident is updated to resolved status. Subsequently such resolved incidents will be automatically removed from the map after they have aged by some fixed/determined time interval. The app will also use the user's own location as determined by device GPS to represent each user on his/her own running MapSafe app to better grasp both the specific locations and the proximity of TU alerts regarding addresses not readily recognizable to many persons at Temple._ 
+
+
+## Project Relevance
+This project will use Object Oriented Design, and a Test Driven Design process. Features will be added and tested separately as the app's functionality is expanding through the development timeframe. Project Management and Version Control tools will be utilized. 
+The translation of TU alerts from text to locations is an area of uncertainty as the possibility of obtaining location data directly in a more readily map-able form has yet to be explored. 
+
+## Conceptual Design
+_This is a proposal is for an original open source project._
+
+## Background
+_This project does not exist at present as no code has been written._
+
 
 ## Personas
 
@@ -23,4 +38,14 @@ She doesn’t want the fear of the unknown to come in the way of her studies or 
 ### Bill, a student 
 Bill, is 18 years old and freshman at Temple University and he is a computer science major. He likes to watch films, play video games and hang out with his colleagues. Bill is from New York and lives in apartment in north Philadelphia near the university because of the time management. He walks to and from classes every day to save time and money. 
 
+## Use Case Diagram
+![UML UseCase Diagram](UseCaseUML.png)
+
+
 Bill is new to the city and he does not know the area where he lives that well. He takes 5 classes which he ends up going home late at night. Therefore, he wants to explore the city, so he needs help feeling safer when he is going back to his apartment. He wants to use technology which would help him to feel secure while walking and which area to avoid from the risk. 
+## Required Resources
+- The group will need people with experience coding Android apps, user interfaces, mapping applications, GPS, linkages between the app and user device in order to place calls to emergency services. 
+-  The project will use Android Studio, Java, JUnit tests, and 3rd party app interfacing tools for map rendering (specifics to be determined).
+
+![WhiteBoard Image](TUMapSafeWhiteBoard.JPG)
+
