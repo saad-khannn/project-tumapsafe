@@ -14,13 +14,6 @@ _This is a proposal is for an original open source project._
 ## Background
 _This project does not exist at present as no code has been written._
 
-## Use Case Diagram
-![UML UseCase Diagram](MapSafe3.PNG)
-
-## Required Resources
-- The group will need people with experience coding Android apps, user interfaces, mapping applications, GPS, linkages between the app and user device in order to place calls to emergency services. 
--  The project will use Android Studio, Java, JUnit tests, and 3rd party app interfacing tools for map rendering (specifics to be determined).
-
 
 ## Personas
 
@@ -45,20 +38,22 @@ She doesn’t want the fear of the unknown to come in the way of her studies or 
 ### Bill, a student 
 Bill, is 18 years old and freshman at Temple University and he is a computer science major. He likes to watch films, play video games and hang out with his colleagues. Bill is from New York and lives in apartment in north Philadelphia near the university because of the time management. He walks to and from classes every day to save time and money. 
 
-Bill is new to the city and he does not know the area where he lives that well. He takes 5 classes which he ends up going home late at night. Therefore, he wants to explore the city, so he needs help feeling safer when he is going back to his apartment. He wants to use technology which would help him to feel secure while walking and which area to avoid from the risk. 
-
 ## Persona 3
 ### David
 ![User Persona Prof](User_Persona_Prof.png)
 
+## Person 4
+### Tam
+Tam is a freshamn transfer student from India he is new to America and is excited to be studying at Temple. He lives on campus and walks to class each day. He lives slightly off campus and has to walk 15 minutes to and from his classes each day. During the summer he lives with his Aunt and Uncles that live in King of Prussia. He has heard some rumors about the safety around campus and is a bit nervous about starting the spring semester, because he has a night class. Tam isn't yet familiar with the community around campus and is never quite sure where the TUalerts he receives are located, making him feel even more uncomfotable. Tam wishes he had a way to see the best way to walk to and from campus when a TUalert is active. 
+
+## Use Case Diagram
+![UML UseCase Diagram](MapSafe3.png)
 
 
-##Persona 4
-![User Persona Prof](Hannah.png)
+Bill is new to the city and he does not know the area where he lives that well. He takes 5 classes which he ends up going home late at night. Therefore, he wants to explore the city, so he needs help feeling safer when he is going back to his apartment. He wants to use technology which would help him to feel secure while walking and which area to avoid from the risk. 
+## Required Resources
+- The group will need people with experience coding Android apps, user interfaces, mapping applications, GPS, linkages between the app and user device in order to place calls to emergency services. 
+-  The project will use Android Studio, Java, JUnit tests, and 3rd party app interfacing tools for map rendering (specifics to be determined).
 
-
-
-
-
-
+![WhiteBoard Image](MapSafe4.JPG)
 
