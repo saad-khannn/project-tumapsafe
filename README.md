@@ -45,7 +45,10 @@ Bill is new to the city and he does not know the area where he lives that well. 
 ![User Persona Prof](User_Persona_Prof.png)
 
 ## Use Case Diagram
-![UML UseCase Diagram](MapSafe3.png)
+![UML UseCase Diagram](MapSafe3.PNG)
+
+##Persona 4
+![User Persona Prof](Hannah.png)
 
 
 
