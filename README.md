@@ -14,6 +14,13 @@ _This is a proposal is for an original open source project._
 ## Background
 _This project does not exist at present as no code has been written._
 
+## Use Case Diagram
+![UML UseCase Diagram](MapSafe3.PNG)
+
+## Required Resources
+- The group will need people with experience coding Android apps, user interfaces, mapping applications, GPS, linkages between the app and user device in order to place calls to emergency services. 
+-  The project will use Android Studio, Java, JUnit tests, and 3rd party app interfacing tools for map rendering (specifics to be determined).
+
 
 ## Personas
 
@@ -44,17 +51,14 @@ Bill is new to the city and he does not know the area where he lives that well. 
 ### David
 ![User Persona Prof](User_Persona_Prof.png)
 
-## Use Case Diagram
-![UML UseCase Diagram](MapSafe3.PNG)
+
 
 ##Persona 4
 ![User Persona Prof](Hannah.png)
 
 
 
-## Required Resources
-- The group will need people with experience coding Android apps, user interfaces, mapping applications, GPS, linkages between the app and user device in order to place calls to emergency services. 
--  The project will use Android Studio, Java, JUnit tests, and 3rd party app interfacing tools for map rendering (specifics to be determined).
 
-![WhiteBoard Image](MapSafe4.JPG)
+
+
 
