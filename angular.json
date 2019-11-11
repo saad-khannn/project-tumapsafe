@@ -20,7 +20,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
+              "src/app/pictures",
               "src/assets"
             ],
             "styles": [
@@ -120,6 +120,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "tu-mapsafe"
+    }
+  },
+  "defaultProject": "tu-mapsafe",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "css"
+    }
+  }
 }
