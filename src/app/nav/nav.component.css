@@ -1,0 +1,31 @@
+
+.nav-item{
+    padding:3px;
+    margin-left: 20px;
+}
+.container-fluid{
+    width: 100%;
+}
+img {
+    width: 30px;
+}
+#linkContainer {
+    float: right;
+    padding-top: 15px;
+    padding-right: 50px;
+}
+
+#title {
+    margin-left: 100px;
+    font-size: 37px;
+}
+
+#link, a{
+    text-decoration: none;
+    color: white;
+}
+
+#link:hover {
+    background-color: darkslategray;
+    border-radius: 20%;
+}
