@@ -9,23 +9,23 @@
 img {
     width: 30px;
 }
-.navbar-nav {
+#linkContainer {
     float: right;
     padding-top: 15px;
     padding-right: 50px;
 }
 
-a.navbar-brand {
+#title {
     margin-left: 100px;
     font-size: 37px;
 }
 
-a.nav-item.nav-link, a{
+#link, a{
     text-decoration: none;
     color: white;
 }
 
-a.nav-item.nav-link:hover {
+#link:hover {
     background-color: darkslategray;
     border-radius: 20%;
 }
