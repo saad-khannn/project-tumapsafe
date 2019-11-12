@@ -1,7 +1,7 @@
 # TU MapSafe
 ## A Temple Campus Safety Mapping Mobile Application
 ## Project Abstract
-_The goal for the project is to design an Android application to connect Temple campus users with existing safety and security services by way of a user-friendly mapped interface and swipe to corner dialing to emergency and non-emergency professionals for increased sense of safety. Additionally the app should receive TU alerts and represent their locations on the campus map in red when under alert and in green when the incident is updated to resolved status. Subsequently such resolved incidents will be automatically removed from the map after they have aged by some fixed/determined time interval. The app will also use the user's own location as determined by device GPS to represent each user on his/her own running MapSafe app to better grasp both the specific locations and the proximity of TU alerts regarding addresses not readily recognizable to many persons at Temple._ 
+_The goal for the project is to design an Angular web application to connect Temple campus users with existing safety and security services by way of a user-friendly mapped interface and swipe to corner dialing to emergency and non-emergency professionals for increased sense of safety. Additionally the app should receive TU alerts and represent their locations on the campus map in red when under alert and in green when the incident is updated to resolved status. Subsequently such resolved incidents will be automatically removed from the map after they have aged by some fixed/determined time interval. The app will also use the user's own location as determined by device GPS to represent each user on his/her own running MapSafe app to better grasp both the specific locations and the proximity of TU alerts regarding addresses not readily recognizable to many persons at Temple._ 
 
 
 ## Project Relevance
@@ -18,8 +18,8 @@ _This project does not exist at present as no code has been written._
 ![UML UseCase Diagram](MapSafe3.PNG)
 
 ## Required Resources
-- The group will need people with experience coding Android apps, user interfaces, mapping applications, GPS, linkages between the app and user device in order to place calls to emergency services. 
--  The project will use Android Studio, Java, JUnit tests, and 3rd party app interfacing tools for map rendering (specifics to be determined).
+- The group will need people with experience coding Angular apps, user interfaces, mapping applications, GPS, linkages between the app and user device in order to place calls to emergency services. 
+-  The project will use Angular, Typescript, html, JUnit tests, and 3rd party app interfacing tools for map rendering (specifics to be determined).
 
 ## Project Vision
 
