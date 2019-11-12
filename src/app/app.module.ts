@@ -10,6 +10,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,11 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCh8_uCyeKA2fzIVlNmJYdjqy6C8Zi7A9M'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
