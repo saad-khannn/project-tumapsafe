@@ -1,0 +1,37 @@
+#contactComponent {
+    background-color: white;
+    
+}
+
+.custom-bg{
+    background-color: #981F32;
+}
+
+#subHeader { 
+    
+    color: white;
+    
+    
+    
+    
+}
+
+.list-group-item {
+    transition: all 0.3s ease-in-out;
+}
+.list-group-item:hover{
+    background-color:rgb(127, 10, 12);
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#email, #email a{
+    color:white; 
+    border-color: rgb(152, 31, 50);
+    background-color: rgb(152, 31, 50);
+    box-shadow: 50px;
+}

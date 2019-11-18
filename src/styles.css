@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
+body{
+    background-image: url(app/pictures/paley.JPG);
+}
+
+body, head{
+    font-family: 'crimson_textregular',serif !important;
+}
+
