@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { FooterComponent } from './footer/footer.component';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './footer/footer.component';
     SignUpComponent,
     HistoryComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
