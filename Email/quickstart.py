@@ -9,18 +9,20 @@ import email
 from apiclient import errors
 from TUalert import TUalert
 
+# Array that holds all of the TUalerts
 alertList = []
+# Imports the printAlert function from the TUalert class
 printAlert = TUalert.printAlert
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
-#Prints out all of the current TUalerts
+#Prints out all of the current TUalerts from the alertList array
 def printAlerts():
   for x in range(len(alertList)):
     printAlert(alertList[x])
 
-# Gets list of messages that are about TUalerts
+# Gets a list of messages that are about TUalerts based on a search query
 def listMessages(service, user_id, query):
     try: 
       response = service.users().threads().list(userId=user_id,
@@ -38,66 +40,69 @@ def listMessages(service, user_id, query):
     except errors.HttpError, error:
       print('An error occurred: %s' % error)
 
-# Reads the message and gets the date and time of the TUalert
-def getDateTime(service, user_id, msg_id, final, alert):
+# Reads the message and gets the date and time information about the TUalert
+def getDateTime(service, user_id, msg_id, alert):
     try:
       message = service.users().messages().get(userId=user_id, id=msg_id, format='minimal').execute()
+
+      # Splits the content of the message to the needed components and assigns it to a TUalert object
       temp = message['snippet'].split('Date:')[1].split('at')
-      #temp2 = temp[1]
-      final += "Date: " + temp[0] + '\n'
-      final += "Time: " + temp[1].split('Subject:')[0] + '\n'
       alert.date = temp[0]
       alert.time = temp[1].split('Subject:')[0]
-      print(final)
-      #print('Date and time: %s' % message)
-      #print('\n')
       return alert
 
     except errors.HttpError, error:
      print('An error occurred: %s' % error)
 
-# Reads the message and gets the crime and location of the TUalert
+# Reads the message and gets the crime and location information about the TUalert
 def getCrimeLocation(service, user_id, threads):
   totalAlerts = 0
   for thread in threads:
         tdata = service.users().threads().get(userId='me', id=thread['id']).execute()
 
+        # Creates an empty TUalert object
         alert = TUalert('', '', '', '', '', totalAlerts)
+        # Incriments the total alert count
         totalAlerts += 1
-
-        #print('Crime and location: %s' % thread['snippet'])
-
-        final = 'Alert Type: '
+        
         temp = thread['snippet']
 
+        # If the TUalert is a crime
         if 'Use caution.' in temp:
           alert.alert = 'Crime'
-          final += 'crime \n'
-          final += 'Crime: '
+          # Description of TUalert
+          alert.description = temp.split('<b>Patel</b>,')[1]
           temp2 = temp.split('reported at')
-          final += temp2[0].split(',')[1] + '\n' + 'Location: '
           temp3 = temp2[1].split('.')
-          final += temp3[0] + '\n'
+          # Location of TUalert
           alert.location = temp3[0]
+          # Crime description of TUalert
           alert.crime = temp2[0].split(',')[1]
+
+        # If the TUalert is an all clear message  
         elif 'All clear' in temp:
           alert.alert = 'All Clear'
-          final += 'clear \n'
-          final += 'Crime: clear \n'
+          # Description of TUalert
+          alert.description = temp.split('<b>Patel</b>,')[1]
           temp2 = temp.split('in the area of')
-          final += 'Location: ' + temp2[1].split('.')[0] + '\n'
+          # Location of TUalert
           alert.location = temp2[1].split('.')[0]
+          # Crime type does not apply for this type of TUalert
           alert.crime = 'N/A'
+
+        # If the TUalert is something else (will be ignored)  
         else:
-          final += 'other \n'
-          final += 'Crime: N/A \n'
-          final += 'Location: N/A \n' 
           alert.alert = 'Other'
+          # Description of TUalert
+          alert.description = temp.split('<b>Patel</b>,')[1]
+          # Location does not apply for this type of TUalert
           alert.location = 'N/A'
+          # Crime type does not apply for this type of TUalert
           alert.crime = 'N/A'
                
+        # Gets the date and time info for all of the TUalerts and adds them to the alertList array       
         for data in tdata['messages']:
-          alertList.append(getDateTime(service, 'me', data['id'], final, alert))
+          alertList.append(getDateTime(service, 'me', data['id'], alert))
 
 def main():
     """Shows basic usage of the Gmail API.
@@ -124,7 +129,7 @@ def main():
 
     service = build('gmail', 'v1', credentials=creds)
 
-    # Call the Gmail API
+    # Calls the Gmail API
 
     threads = listMessages(service,'me','Jay Patel,')
 
