@@ -8,11 +8,14 @@ import base64
 import email
 from apiclient import errors
 from TUalert import TUalert
+from firebase import firebase
 
 # Array that holds all of the TUalerts
 alertList = []
 # Imports the printAlert function from the TUalert class
 printAlert = TUalert.printAlert
+# Firebase database setup
+firebase = firebase.FirebaseApplication("https://tumapsafe-1cd6f.firebaseio.com/", None)
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
@@ -24,19 +27,19 @@ def printAlerts():
 
 # Gets a list of messages that are about TUalerts based on a search query
 def listMessages(service, user_id, query):
-    try: 
+    try:
       response = service.users().threads().list(userId=user_id,
                                                q=query).execute()
       threads = []
       if 'threads' in response:
          threads.extend(response['threads'])
-    
+
       while 'nextPageToken' in response:
         page_token = response['nextPageToken']
         response = service.users().threads().list(userId=user_id, q=query, pageToken=page_token).execute()
-        threads.extend(response['threads'])    
+        threads.extend(response['threads'])
 
-      return threads 
+      return threads
     except errors.HttpError, error:
       print('An error occurred: %s' % error)
 
@@ -49,6 +52,20 @@ def getDateTime(service, user_id, msg_id, alert):
       temp = message['snippet'].split('Date:')[1].split('at')
       alert.date = temp[0]
       alert.time = temp[1].split('Subject:')[0]
+
+      # Data struct that we pass into the database (Need to find a better way to handle this)
+      data = {
+        'Date': alert.date,
+        'Time': alert.time,
+        'Crime' : alert.crime,
+        'Alert Type' : alert.alert,
+        'Location' : alert.location,
+        'Id' : alert.id,
+        'Description' : alert.description
+      }
+
+     # Puts the TUalert into the database
+      firebase.post('/Alerts/' + str(alert.id), data)
       return alert
 
     except errors.HttpError, error:
@@ -60,47 +77,54 @@ def getCrimeLocation(service, user_id, threads):
   for thread in threads:
         tdata = service.users().threads().get(userId='me', id=thread['id']).execute()
 
+        # Checks to see if TUalert is already in the system
+        check = firebase.get('/Alerts/' + str(totalAlerts), None)
+        # If already in the system skip the alert
+        if check != None:
+            totalAlerts += 1
+            continue
+
         # Creates an empty TUalert object
         alert = TUalert('', '', '', '', '', totalAlerts)
         # Incriments the total alert count
         totalAlerts += 1
-        
+
         temp = thread['snippet']
 
         # If the TUalert is a crime
         if 'Use caution.' in temp:
           alert.alert = 'Crime'
-          # Description of TUalert
-          alert.description = temp.split('<b>Patel</b>,')[1]
           temp2 = temp.split('reported at')
           temp3 = temp2[1].split('.')
           # Location of TUalert
           alert.location = temp3[0]
           # Crime description of TUalert
           alert.crime = temp2[0].split(',')[1]
+          # Description of the TUalert
+          alert.description = alert.crime + 'at' + alert.location + ". Police are responding. Use caution."
 
-        # If the TUalert is an all clear message  
+        # If the TUalert is an all clear message
         elif 'All clear' in temp:
           alert.alert = 'All Clear'
-          # Description of TUalert
-          alert.description = temp.split('<b>Patel</b>,')[1]
           temp2 = temp.split('in the area of')
           # Location of TUalert
           alert.location = temp2[1].split('.')[0]
           # Crime type does not apply for this type of TUalert
           alert.crime = 'N/A'
+          # Description of TUalert
+          alert.description = 'All clear in the area of' + alert.location + '. Suspect in custody. You may resume normal operations.'
 
-        # If the TUalert is something else (will be ignored)  
+        # If the TUalert is something else (will be ignored)
         else:
           alert.alert = 'Other'
           # Description of TUalert
-          alert.description = temp.split('<b>Patel</b>,')[1]
+          alert.description = 'N/A'
           # Location does not apply for this type of TUalert
           alert.location = 'N/A'
           # Crime type does not apply for this type of TUalert
           alert.crime = 'N/A'
-               
-        # Gets the date and time info for all of the TUalerts and adds them to the alertList array       
+
+        # Gets the date and time info for all of the TUalerts and adds them to the alertList array
         for data in tdata['messages']:
           alertList.append(getDateTime(service, 'me', data['id'], alert))
 
@@ -137,28 +161,9 @@ def main():
         print('No TUalerts found.')
     else:
       getCrimeLocation(service, 'me', threads)
-      
-    printAlerts()
+
+    # Prints the TUlalerts (Mostly for testing purposes)
+    #printAlerts()
 
 if __name__ == '__main__':
     main()
-
-
-
-  
-    
-    
-
-      
-
-
-
-
-
-
-
-
-
-
-
-

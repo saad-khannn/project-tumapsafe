@@ -10,10 +10,9 @@ class TUalert:
    self.crime = crime
    self.location = location
    self.id = tuid
-   self.description = self.crime + 'at' + self.location
+   self.description = ''
 
- 
- # alert types = crime, clear, close
+ # alert types = crime, clear, other
  # date format = Mon, Oct 21, 2019
  # time format = 12:12 PM
  # crime format = for crime alert types will list crime for all other alert types crime will be N/A
@@ -23,7 +22,7 @@ class TUalert:
 
 # Prints the alert out with all of the contents of a TUalert object
  def printAlert(self):
-  	print('Alert Type: ' + self.alert + '\n' + 'Date: ' + 
+  	print('Alert Type: ' + self.alert + '\n' + 'Date: ' +
   		self.date + '\n' + 'Time: ' + self.time + '\n' + 'Crime: ' + self.crime + '\n'
-  		+ 'Location: ' + self.location + '\n' + 'Alert id: ' + str(self.id) + '\n' + 'Description: ' + 
+  		+ 'Location: ' + self.location + '\n' + 'Alert id: ' + str(self.id) + '\n' + 'Description: ' +
   		self.description + '\n')
