@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'tu-mapsafe';
+  Alerts: any[]
+
+  constructor(db: AngularFireDatabase) { 
+    db.list('/Alerts').valueChanges().subscribe(Alerts =>{
+      this.Alerts = Alerts;
+      console.log(this.Alerts);
+    })
+  }
 }
