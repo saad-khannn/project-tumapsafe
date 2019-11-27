@@ -1,3 +1,8 @@
-<p>
-  history works!
-</p>
+<div class="container-fluid" style="background-color:white;">
+  <p>ITEMS FROM FIREBASE HOPEFULLY</p>
+  <p>FUCK YOU</p>
+  <div class="col-md-3">
+
+    <p *ngFor="let alert of alerts | async">{{ alert.content }}</p>
+  </div>
+</div>
