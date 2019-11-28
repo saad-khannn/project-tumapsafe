@@ -23,16 +23,17 @@ SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 # Prints out all of the current TUalerts from the alertList array
 
+
 def printAlerts():
     for x in range(len(alertList)):
         printAlert(alertList[x])
 
 # Gets a list of messages that are about TUalerts based on a search query
 
+
 def listMessages(service, user_id, query):
     try:
-        response = service.users().threads().list(userId=user_id,
-                                                  q=query).execute()
+        response = service.users().threads().list(userId=user_id, q=query).execute()
         threads = []
         if 'threads' in response:
             threads.extend(response['threads'])
@@ -49,6 +50,7 @@ def listMessages(service, user_id, query):
 
 # Reads the message and gets the date and time information about the TUalert
 
+
 def getDateTime(service, user_id, msg_id, alert):
     try:
         message = service.users().messages().get(
@@ -64,14 +66,14 @@ def getDateTime(service, user_id, msg_id, alert):
             'Date': alert.date,
             'Time': alert.time,
             'Crime': alert.crime,
-            'Alert Type': alert.alert,
+            'AlertType': alert.alert,
             'Location': alert.location,
             'Id': alert.id,
             'Description': alert.description
         }
 
        # Puts the TUalert into the database
-        firebase.post('/Alerts/' + str(alert.id), data)
+        firebase.patch('Alerts/' + str(alert.id) + '/', data)
         return alert
 
     except errors.HttpError, error:
@@ -79,21 +81,19 @@ def getDateTime(service, user_id, msg_id, alert):
 
 # Reads the message and gets the crime and location information about the TUalert
 
+
 def getCrimeLocation(service, user_id, threads):
     totalAlerts = 0
     for thread in threads:
         tdata = service.users().threads().get(
             userId='me', id=thread['id']).execute()
+        alert = TUalert('', '', '', '', '', totalAlerts)
 
-        # Checks to see if TUalert is already in the system
-        check = firebase.get('/Alerts/' + str(totalAlerts), None)
-        # If already in the system skip the alert
-        if check == None:
-            # Creates an empty TUalert object
-            alert = TUalert('', '', '', '', '', totalAlerts)
+        temp = thread['snippet']
+        # Checks to see if alert is already in the database
+        check = firebase.get('Alerts/' + str(alert.id) + '/', None)
 
-            temp = thread['snippet']
-
+        if check['Id'] == None:
             # If the TUalert is a crime
             if 'Use caution.' in temp:
                 alert.alert = 'Crime'
@@ -107,7 +107,7 @@ def getCrimeLocation(service, user_id, threads):
                 alert.description = alert.crime + 'at' + alert.location + \
                     ". Police are responding. Use caution."
 
-            # If the TUalert is an all clear message
+                # If the TUalert is an all clear message
             elif 'All clear' in temp:
                 alert.alert = 'All Clear'
                 temp2 = temp.split('in the area of')
