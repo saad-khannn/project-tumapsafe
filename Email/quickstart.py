@@ -12,8 +12,6 @@ from firebase import firebase
 
 # Array that holds all of the TUalerts
 alertList = []
-# Array that holds all of the key values
-keyList = []
 # Imports the printAlert function from the TUalert class
 printAlert = TUalert.printAlert
 # Firebase database setup
