@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-home',
@@ -9,19 +10,49 @@ export class HomeComponent implements OnInit {
 
   lat: number;
   long: number;
+  Alerts: any[];
+  alertDescription: any;
+  alertLocation: any;
 
-  constructor() { }
+  constructor(db: AngularFireDatabase) {
+    db.list('/Alerts').valueChanges().subscribe(Alerts => {
+      this.Alerts = Alerts;
+      var keys = Object.keys(Alerts);
+      for (var i = 0; i < 1; i++) {
+        var k = keys[i];
+        this.alertDescription = Alerts[k].Description;
+        this.alertLocation = Alerts[k].Location;
+        console.log(this.alertLocation);
+      }
+    })
+  }
 
   ngOnInit() {
     this.getUserLocation()
-  }
+    }
 
-  private getUserLocation(){
+  getUserLocation(){
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(position => {
         this.lat = position.coords.latitude;
         this.long = position.coords.longitude;
       });
     }
+  }
+
+  userIcon = {
+    url: 'https://clipground.com/images/schaumburg-clipart-20.jpg',
+    scaledSize: {
+      width: 75,
+      height: 75
+      }
+  }
+
+  alertIcon = {
+    url: 'https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-and-shapes-3/177800/115-512.png',
+    scaledSize: {
+      width: 50,
+      height: 50
+      }
   }
 }
