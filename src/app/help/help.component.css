@@ -1,0 +1,20 @@
+#contactComponent {
+    background-color: rgb(254, 104, 104);
+    
+}
+.vision {
+    background-color: black;
+    color: white;
+    margin: 20px;
+    padding: 10px;
+  } 
+
+.qut {
+    background-color: black;
+    color: white;
+    margin: 20px;
+    padding: 20px;
+}
+.num{
+    color: white;
+}

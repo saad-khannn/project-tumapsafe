@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./help.component.css']
 })
 export class HelpComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {
   }
+ 
 
 }
