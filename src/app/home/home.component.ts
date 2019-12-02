@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   Alerts: any[];
   alertDescription: any;
   alertLocation: any;
+  alertLat: number;
+  alertLong: number;
 
   constructor(db: AngularFireDatabase) {
     db.list('/Alerts').valueChanges().subscribe(Alerts => {
@@ -21,8 +23,14 @@ export class HomeComponent implements OnInit {
       for (var i = 0; i < 1; i++) {
         var k = keys[i];
         this.alertDescription = Alerts[k].Description;
-        this.alertLocation = Alerts[k].Location;
-        console.log(this.alertLocation);
+        this.alertLocation = Alerts[k].Location.split(" ").join("+");
+        var url = "https://maps.googleapis.com/maps/api/geocode/json?&address="+ this.alertLocation + "+Philadelphia,+PA&key=AIzaSyCh8_uCyeKA2fzIVlNmJYdjqy6C8Zi7A9M"
+        var req = new XMLHttpRequest();
+        req.open('GET', url, false);
+        req.send(null);
+        var data = JSON.parse(req.responseText);
+        this.alertLat = data.results[0].geometry.location.lat; 
+        this.alertLong = data.results[0].geometry.location.lng;
       }
     })
   }
