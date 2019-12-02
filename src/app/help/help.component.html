@@ -1,5 +1,6 @@
-
-
+<!DOCTYPE html>
+<html>
+   <body>
 <div class="container pb-5" id="contactComponent">
    
    <h1 style="text-align: center;">How can we help?</h1>
@@ -17,14 +18,26 @@
    </div>
     <h1 style="text-align: center;"> Frequently Asked Questions</h1>
       <div class="qut"> 
+           
          <ul>
-         <li><h5>Where can I find the TU Map?</h5></li>
+         <li><button onclick="myFunction()">Where can I find the TU Map?</button></li>
+        
          <li style="list-style: circle;"><h6>The TU Map is Located under Home Page.</h6></li>
          <li><h5>Where can I find the History of alerts?</h5></li>
          <li style="list-style: circle;"><h6>All the past crimes and alerts are located under History page. </h6></li>
          <li><h5>Where can I find Emergency Call list, locations info? </h5></li>
          <li style="list-style: circle;"><h6> You can select Contact page. </h6></li>
          </ul>
+         
       </div>
-   
+      
+
+      
 </div>
+<script>
+      function myFunction() {
+        alert("I am an alert box!");
+      }
+</script>
+</body>
+</html>
