@@ -8,11 +8,13 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class HomeComponent implements OnInit {
 
-  lat: number;
-  long: number;
+  userLat: number;
+  userLong: number;
   Alerts: any[];
   alertDescription: any;
   alertLocation: any;
+  alertDate: any;
+  alertTime: any;
   alertLat: number;
   alertLong: number;
 
@@ -22,9 +24,11 @@ export class HomeComponent implements OnInit {
       var keys = Object.keys(Alerts);
       for (var i = 0; i < 1; i++) {
         var k = keys[i];
-        this.alertDescription = Alerts[k].Description;
+        this.alertDescription = Alerts[k].Description.split(".")[0];
         this.alertLocation = Alerts[k].Location.split(" ").join("+");
-        var url = "https://maps.googleapis.com/maps/api/geocode/json?&address="+ this.alertLocation + "+Philadelphia,+PA&key=AIzaSyCh8_uCyeKA2fzIVlNmJYdjqy6C8Zi7A9M"
+        this.alertDate = Alerts[k].Date.substring(Alerts[k].Date.indexOf(",") + 1);
+        this.alertTime = Alerts[k].Time;
+        var url = "https://maps.googleapis.com/maps/api/geocode/json?&address=" + this.alertLocation + "+Philadelphia,+PA&key=AIzaSyCh8_uCyeKA2fzIVlNmJYdjqy6C8Zi7A9M"
         var req = new XMLHttpRequest();
         req.open('GET', url, false);
         req.send(null);
@@ -42,8 +46,8 @@ export class HomeComponent implements OnInit {
   getUserLocation(){
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(position => {
-        this.lat = position.coords.latitude;
-        this.long = position.coords.longitude;
+        this.userLat = position.coords.latitude;
+        this.userLong = position.coords.longitude;
       });
     }
   }
