@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <agm-map [zoom]="18" [latitude]="lat" [longitude]="long">
+      <agm-map [zoom]="18" [latitude]="userLat" [longitude]="userLong">
         
-        <agm-marker [latitude]="lat" [longitude]="long" [iconUrl]="userIcon">
+        <agm-marker [latitude]="userLat" [longitude]="userLong" [iconUrl]="userIcon">
           <agm-info-window>
               <div id="info-text">You are here.</div>
           </agm-info-window>
@@ -11,10 +11,18 @@
         
         <agm-marker [latitude]="alertLat" [longitude]="alertLong" [iconUrl]="alertIcon">
             <agm-info-window>
-                <div id="info-text"> {{ alertDescription }} </div>
+                <div id="info-text" style="text-align: center;"> {{ alertDescription }} </div>
+                <div id="info-text" style="text-align: center;"> {{ alertDate }} at {{ alertTime }} </div>
             </agm-info-window>
           </agm-marker>
-
+          
+          <agm-circle 
+          [latitude]="alertLat" 
+          [longitude]="alertLong" 
+          [radius]="300" 
+          [fillColor]="'red'">
+          </agm-circle>
+          
       </agm-map>
     </div>
 </div>
