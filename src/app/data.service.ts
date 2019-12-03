@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { AlertLocation } from './location.model';
+import { AlertLocation } from './models/location.model';
 
 @Injectable({
   providedIn: 'root'
