@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { Observable } from 'rxjs';
 import { DataService } from '../data.service';
 import { Alerts, AlertModel } from '../models/alert.model';
 import { MyMarkers } from '../models/marker.model';
