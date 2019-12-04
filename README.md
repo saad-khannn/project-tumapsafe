@@ -4,13 +4,13 @@
 _The goal for the project is to design an Angular web application to connect Temple campus users with existing safety and security services by way of a user-friendly mapped interface and swipe to corner dialing to emergency and non-emergency professionals for increased sense of safety. Additionally the app should receive TU alerts and represent their locations on the campus map in red when under alert and in green when the incident is updated to resolved status. Subsequently such resolved incidents will be automatically removed from the map after they have aged by some fixed/determined time interval. The app will also use the user's own location as determined by device GPS to represent each user on his/her own running MapSafe app to better grasp both the specific locations and the proximity of TU alerts regarding addresses not readily recognizable to many persons at Temple._ 
 
 ## Project Abstract Initial
-_The goal for the project is to design an Angular web application to connect Temple campus users with existing safety and security services for increased safety and increased experience of feeling safe on and around the campus: 
+The goal for the project is to design an Angular web application to connect Temple campus users with existing safety and security services for increased safety and increased experience of feeling safe on and around the campus: 
 - by way of a user-friendly mapped interface
-- _swipe to corner dialing to emergency and non-emergency professionals  Additionally 
-- _the app should receive TU alerts and represent their locations on the campus map in red 
-- _when an alert is resolved it should then be displayed with a green marker Subsequently such 
-- _incidents (whether or not resolved) will be automatically removed from the map after they have aged by some fixed time interval
-- _app will also use the user's own location as determined bytheir device GPS to represent each user on his/her own running MapSafe app home map page in order to better grasp both the specific location of a given alert and also their own proximity to said alert
+- swipe to corner dialing to emergency and non-emergency professionals  Additionally 
+- the app should receive TU alerts and represent their locations on the campus map in red 
+- when an alert is resolved it should then be displayed with a green marker Subsequently such 
+- incidents (whether or not resolved) will be automatically removed from the map after they have aged by some fixed time interval
+- app will also use the user's own location as determined bytheir device GPS to represent each user on his/her own running MapSafe app home map page in order to better grasp both the specific location of a given alert and also their own proximity to said alert
 
 
 ## Project Relevance
