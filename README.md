@@ -4,23 +4,29 @@
 _The goal for the project is to design an Angular web application to connect Temple campus users with existing safety and security services by way of a user-friendly mapped interface and swipe to corner dialing to emergency and non-emergency professionals for increased sense of safety. Additionally the app should receive TU alerts and represent their locations on the campus map in red when under alert and in green when the incident is updated to resolved status. Subsequently such resolved incidents will be automatically removed from the map after they have aged by some fixed/determined time interval. The app will also use the user's own location as determined by device GPS to represent each user on his/her own running MapSafe app to better grasp both the specific locations and the proximity of TU alerts regarding addresses not readily recognizable to many persons at Temple._ 
 
 ## Project Abstract Initial
-The goal for the project is to design an Angular web application to connect Temple campus users with existing safety and security services for increased safety and increased experience of feeling safe on and around the campus: 
+The goal for the project is to design an Android application to connect Temple campus users with existing safety and security services for increased safety and increased experience of feeling safe on and around the campus: 
 - by way of a user-friendly mapped interface
-- swipe to corner dialing to emergency and non-emergency professionals  Additionally 
+- swipe to corner dialing to emergency and non-emergency professionals
 - the app should receive TU alerts and represent their locations on the campus map in red 
-- when an alert is resolved it should then be displayed with a green marker Subsequently such 
+- when an alert is resolved it should then be displayed with a green marker
 - incidents (whether or not resolved) will be automatically removed from the map after they have aged by some fixed time interval
-- app will also use the user's own location as determined bytheir device GPS to represent each user on his/her own running MapSafe app home map page in order to better grasp both the specific location of a given alert and also their own proximity to said alert
+- app will also show the user's own location (as determined bytheir device GPS) on his/her own running MapSafe app map screen to allow users to better grasp the specific location of a TU alert and also their own proximity to said alert
+- 
 
+## Project Development Process
+Features will be added and tested separately as the app's functionality is expanding through the development timeframe. 
+Project Management tools will be utilized.
+Version Control tools will be utilized. 
+Team communication tools will be utilized to reduce the need for face to face meetings, as all team members have unique schedules and demands on their time. 
 
-## Project Relevance
-This project will use Object Oriented Design, and a Test Driven Design process. Features will be added and tested separately as the app's functionality is expanding through the development timeframe. Project Management and Version Control tools will be utilized. 
-The translation of TU alerts from text to locations is an area of uncertainty as the possibility of obtaining location data directly in a more readily map-able form has yet to be explored. 
+## Evolution of the Project
+TU MapSafe was initially proposed as a Mobile App with the intention to code the project in Android Studio. Very early in the first sprint, the collective decision was made to switch the project plan to instead design a web app. This decision was unanimously agreed to, and the flexibility and communication of the entire team made this quick redirection possible and successful.
+
 
 
 ## Project Evolution
-_Initially the project was proposed and conceived as a Mobile App to be built in Android Studio.
-Early in the first sprint the decision was made to switch our project concept to build a web application instead of an Android application. The excellent communication and flexibility of all group members allowed for this unanimous decision to be reached quickly and collectively. The team established multiple open and accessible communication channels with one another from day one. This focus on keeping constant communication, and also this decision to pivot to a web app were unquestionably critical factors to the ultimate success of the team's efforts in achieving a working product aligned with the initial vision our group had crafted. _
+Initially the project was proposed and conceived as a Mobile App to be built in Android Studio.
+Early in the first sprint the decision was made to switch our project concept to build a web application instead of an Android application. The excellent communication and flexibility of all group members allowed for this unanimous decision to be reached quickly and collectively. The team established multiple open and accessible communication channels with one another from day one. This focus on keeping constant communication, and also this decision to pivot to a web app were unquestionably critical factors to the ultimate success of the team's efforts in achieving a working product aligned with the initial vision our group had crafted. 
 
 ## Use Case Diagram
 ![UML UseCase Diagram](MapSafe3.PNG)
