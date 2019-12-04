@@ -1,7 +1,16 @@
 # TU MapSafe
 ## A Temple Campus Safety Mapping Mobile Application
-## Project Abstract
+## Project Abstract Final
 _The goal for the project is to design an Angular web application to connect Temple campus users with existing safety and security services by way of a user-friendly mapped interface and swipe to corner dialing to emergency and non-emergency professionals for increased sense of safety. Additionally the app should receive TU alerts and represent their locations on the campus map in red when under alert and in green when the incident is updated to resolved status. Subsequently such resolved incidents will be automatically removed from the map after they have aged by some fixed/determined time interval. The app will also use the user's own location as determined by device GPS to represent each user on his/her own running MapSafe app to better grasp both the specific locations and the proximity of TU alerts regarding addresses not readily recognizable to many persons at Temple._ 
+
+## Project Abstract Initial
+_The goal for the project is to design an Angular web application to connect Temple campus users with existing safety and security services for increased safety and increased experience of feeling safe on and around the campus: 
+- by way of a user-friendly mapped interface
+- _swipe to corner dialing to emergency and non-emergency professionals  Additionally 
+- _the app should receive TU alerts and represent their locations on the campus map in red 
+- _when an alert is resolved it should then be displayed with a green marker Subsequently such 
+- _incidents (whether or not resolved) will be automatically removed from the map after they have aged by some fixed time interval
+- _app will also use the user's own location as determined bytheir device GPS to represent each user on his/her own running MapSafe app home map page in order to better grasp both the specific location of a given alert and also their own proximity to said alert
 
 
 ## Project Relevance
@@ -17,15 +26,29 @@ _This project does not exist at present as no code has been written._
 ## Use Case Diagram
 ![UML UseCase Diagram](MapSafe3.PNG)
 
-## Required Resources
-- The group will need people with experience coding Angular apps, user interfaces, mapping applications, GPS, linkages between the app and user device in order to place calls to emergency services. 
--  The project will use Angular, Typescript, html, JUnit tests, and 3rd party app interfacing tools for map rendering (specifics to be determined).
+## Required Skills and Resources
+The group will need people with (or willing to acquire) experience in the following areas:
+- coding Angular apps
+- user interfaces 
+- mapping applications
+- GPS
+- linkages between the app and user device in order to contact emergency services
+- user experience design
+- visual design particularly in relation to website best practices
+
+The project will uses technogies and resources including:
+- Angular
+- Typescript
+- html and css
+- and 3rd party app interfacing tools for map rendering (specifics to be determined)
 
 ## Project Vision
 
-FOR Temple University members WHO want to feel more secure. TU MapSafe is an application THAT can more intuitively and effortlessly interpret TU Alerts and provide access to Temple Campus Police. UNLIKE the current alerts notification system, OUR PRODUCT provides a GUI that makes clear to the user their proximity to the incident, threat, etc. so that they can react accordingly. 
+FOR Temple University members WHO want to feel more secure, TU MapSafe is an application THAT can more intuitively and effortlessly interpret TU Alerts and provide access to Temple Campus Police.
+UNLIKE the existing campus alert notification system, OUR PRODUCT provides a GUI that makes clear to the user their proximity to the incident, threat, etc. so that they can react accordingly. 
 
-## Personas
+## Personas 
+The following user personas represent the slight variations in the use cases and greatest benefit to user to be gained from our application. They are all Temple Campus community members, but their needs may vary slightly and our research from User Experience Design surveying indicates that these different user populations report different levels of comfort/safety and different levels of safety on and around the campus. 
 
 ### Angela 
 Angela is a sophomore at Temple University and she is a Film and Media Arts major. 
