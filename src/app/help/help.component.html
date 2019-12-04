@@ -3,9 +3,9 @@
    <body>
 <div class="container pb-5" id="contactComponent">
    
-   <h1 style="text-align: center;">How can we help?</h1>
+   <h2  class ="back">How can we help?</h2>
    <div class="vision">
-         <h3 style="text-align: center;">The Product Vision</h3>
+         <h4 style="text-align: center;">The Product Vision</h4>
          <p>   
             For Temple University students WHO wants to feel secure. 
             TU Map Safe is a Website application THAT provides access 
@@ -16,8 +16,59 @@
             their distance to the threat so that they can react accordingly. 
               </p>
    </div>
-    <h1 style="text-align: center;"> Frequently Asked Questions</h1>
-      <!-- <div class="qut"> 
+
+
+    <h2 style="text-align: left;" class="back"> Frequently Asked Questions</h2>
+    
+      <accordion [isAnimated]="true" >
+            <accordion-group >
+               <button class="btn btn-link" accordion-heading type="button">
+                     1. Where can I find Crime log? 
+               </button>
+                      You can find Crime Log on Temple officle Website Or 
+                      you can <a href="https://safety.temple.edu/reports-logs/crime-log"> Click Here</a>
+            </accordion-group>
+            <accordion-group>
+               <button class="btn btn-link" accordion-heading type="button">
+                     2. Where can I find the TU Map?
+               </button>
+                       The TU Map is Located under Home Page.
+            </accordion-group>
+            <accordion-group>
+               <button class="btn btn-link" accordion-heading type="button">
+                     3. Where can I find the History of alerts?
+               </button>
+                        All the past crimes and alerts are located under History page.
+            </accordion-group>
+            <accordion-group>
+                  <button class="btn btn-link" accordion-heading type="button">
+                     4. Where can I find Emergency Call list and locations info?
+                  </button>
+                        You can select Contact page.
+               </accordion-group>
+               
+         </accordion>
+         <h2>For more help, Call or Email</h2>
+         <ul class="list-group">
+               <a href="tel:+1-215-123-4567">
+                 <li class="list-group-item">Call Help desk</li>
+                </a>
+                <a href="mailto:police@temple.edu">
+                     <li class="list-group-item">Send email to Help Desk</li>
+               </a>
+          </ul>
+      
+</div>
+
+<script>
+      function myFunction() {
+        alert("I am an alert box!");
+      }
+</script>
+</body>
+</html>
+
+  <!-- <div class="qut"> 
          <accordion [isAnimated]="true">
             <accordion-group>
                <button class="btn btn-link" accordion-heading type="button">
@@ -49,34 +100,3 @@
          </ul>
           -->  
       <!-- </div> -->
-      <accordion [isAnimated]="true">
-            <accordion-group>
-               <button class="btn btn-link" accordion-heading type="button">
-                     Where can I find the TU Map?
-               </button>
-               The TU Map is Located under Home Page.
-            </accordion-group>
-            <accordion-group>
-               <button class="btn btn-link" accordion-heading type="button">
-                  Where can I find the History of alerts? 
-               </button>
-               All the past crimes and alerts are located under History page.
-            </accordion-group>
-            <accordion-group>
-               <button class="btn btn-link" accordion-heading type="button">
-                     Where can I find Emergency Call list, locations info?
-               </button>
-               You can select Contact page.
-            </accordion-group>
-         </accordion>
-
-      
-</div>
-
-<script>
-      function myFunction() {
-        alert("I am an alert box!");
-      }
-</script>
-</body>
-</html>
