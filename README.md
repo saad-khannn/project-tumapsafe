@@ -17,11 +17,10 @@ The goal for the project is to design an Angular web application to connect Temp
 This project will use Object Oriented Design, and a Test Driven Design process. Features will be added and tested separately as the app's functionality is expanding through the development timeframe. Project Management and Version Control tools will be utilized. 
 The translation of TU alerts from text to locations is an area of uncertainty as the possibility of obtaining location data directly in a more readily map-able form has yet to be explored. 
 
-## Conceptual Design
-_This is a proposal is for an original open source project._
 
-## Background
-_This project does not exist at present as no code has been written._
+## Project Evolution
+_Initially the project was proposed and conceived as a Mobile App to be built in Android Studio.
+Early in the first sprint the decision was made to switch our project concept to build a web application instead of an Android application. The excellent communication and flexibility of all group members allowed for this unanimous decision to be reached quickly and collectively. The team established multiple open and accessible communication channels with one another from day one. This focus on keeping constant communication, and also this decision to pivot to a web app were unquestionably critical factors to the ultimate success of the team's efforts in achieving a working product aligned with the initial vision our group had crafted. _
 
 ## Use Case Diagram
 ![UML UseCase Diagram](MapSafe3.PNG)
