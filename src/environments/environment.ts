@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+
   firebaseConfig : {
     apiKey: 'AIzaSyDNexz_XiAp8JxSEaZMTgRusg3ISQqrOI8',
     authDomain: 'tumapsafe-1cd6f.firebaseapp.com',

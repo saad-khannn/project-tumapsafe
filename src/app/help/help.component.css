@@ -1,0 +1,48 @@
+#helpComponent {
+    background-color: white;
+    
+}
+.vision:hover {
+    background-color: rgb(152, 31, 50);
+    color: white;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+} 
+
+.vision{ 
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in;
+  
+
+}
+#accordItem { 
+    color: black;
+    text-decoration: none;
+
+}
+
+.qut {
+    background-color: black;
+    color: white;
+    margin: 20px;
+    padding: 20px;
+}
+.num{
+    color: white;
+}
+#moreInfo{
+    color:white; 
+    border-color: rgb(152, 31, 50);
+    background-color: rgb(152, 31, 50);
+    box-shadow: 50px;
+    
+}
+.list-group-item {
+    transition: all 0.3s ease-in-out;
+}
+.list-group-item:hover{
+    background-color:rgb(127, 10, 12);
+    color: white;
+}

@@ -7,9 +7,12 @@ import { Alerts, AlertsEntity } from './models/alert.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
+
   Alerts: Alerts[];
 
   constructor(db: AngularFireDatabase) {
   }
 }
+

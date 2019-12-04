@@ -1,15 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+
 import { DataService } from '../data.service';
 import { AlertLocation, ResultsEntity, Geometry } from '../models/location.model';
 import { Alerts } from '../models/alert.model';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { UtilsService } from '../utils.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
-})
+})  
+userLat: number;
+userLong: number;
+Alerts: Alerts[];
+location: AlertLocation;
+alertLat: number;
+alertLong: number;
+alertDescription: string;
+alertDate: string;
+alertTime: string;
 export class HomeComponent implements OnInit {
   constructor(private dataService: DataService, db: AngularFireDatabase, utils: UtilsService) {
     db.list('/Alerts').valueChanges().subscribe(data => {
@@ -23,18 +34,9 @@ export class HomeComponent implements OnInit {
         this.alertLat = this.location.results[0].geometry.location.lat;
         this.alertLong = this.location.results[0].geometry.location.lng;
       });
-
     });
-  }
-  userLat: number;
-  userLong: number;
-  Alerts: Alerts[];
-  location: AlertLocation;
-  alertLat: number;
-  alertLong: number;
-  alertDescription: string;
-  alertDate: string;
-  alertTime: string;
+ }
+
 
   userIcon = {
     url: 'https://clipground.com/images/schaumburg-clipart-20.jpg',
@@ -56,18 +58,22 @@ export class HomeComponent implements OnInit {
     this.getUserLocation();
   }
 
-  private getUserLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.userLat = position.coords.latitude;
-        this.userLong = position.coords.longitude;
+
+  getUserLocation(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(position => {
+          this.userLat = position.coords.latitude;
+          this.userLong = position.coords.longitude;
       });
     }
   }
+
 
   private formatAlertInfo(description: string, date: string, time: string) {
     this.alertDescription = description;
     this.alertDate = date;
     this.alertTime = time;
+
+  
   }
 }
