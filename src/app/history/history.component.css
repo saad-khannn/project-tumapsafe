@@ -1,0 +1,13 @@
+agm-map {
+    height: 75vh;
+}
+
+#alerts{
+    background-color: white;
+    
+}
+
+#info-text {
+    font-family: sans-serif;
+    font-size: large;
+}

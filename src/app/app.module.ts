@@ -1,7 +1,12 @@
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +24,7 @@ import { HelpComponent } from './help/help.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+
 
 
 @NgModule({
@@ -39,10 +45,12 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCh8_uCyeKA2fzIVlNmJYdjqy6C8Zi7A9M'
     }),
+
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     AccordionModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]

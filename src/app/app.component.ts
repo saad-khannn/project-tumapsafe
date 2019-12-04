@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Alerts, AlertsEntity } from './models/alert.model';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,10 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'tu-mapsafe';
+
+  Alerts: Alerts[];
+
+  constructor(db: AngularFireDatabase) {
+  }
 }
+
