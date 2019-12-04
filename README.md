@@ -1,7 +1,17 @@
 # TU MapSafe
-## A Temple Campus Safety Mapping Mobile Application
+## A Web Application for the Temple Community to increase the utility and value of Temple's Existing Safety and Security Resources. 
+
+### The key novel features of TU MapSafe are the following:
+- present TU alerts through a map interface 
+- provide options to directly place call from the app to the Temple Police, the Philadelphia Police and the Temple Walking Escort program
+- provide integrated options to send a "crime tip" to the Temple Police either anonymously through a web form or through an email  
+- store TU alerts and allow for the display of a map with accumulated historical alerts
+
 ## Project Abstract Final
-_The goal for the project is to design an Angular web application to connect Temple campus users with existing safety and security services by way of a user-friendly mapped interface and swipe to corner dialing to emergency and non-emergency professionals for increased sense of safety. Additionally the app should receive TU alerts and represent their locations on the campus map in red when under alert and in green when the incident is updated to resolved status. Subsequently such resolved incidents will be automatically removed from the map after they have aged by some fixed/determined time interval. The app will also use the user's own location as determined by device GPS to represent each user on his/her own running MapSafe app to better grasp both the specific locations and the proximity of TU alerts regarding addresses not readily recognizable to many persons at Temple._ 
+As the project shifted to a web application, there were changes to the scope and design plans of the initial abstract. 
+The following aspects remained consistent:
+- the graphical presentation of TU alerts on a map that also includes a marker for the user's location to gauge proximity and respond accordingly
+- calling directly from the app is included, but swiping is not the mechanism as it is a web based app
 
 ## Project Abstract Initial
 The goal for the project is to design an Android application to connect Temple campus users with existing safety and security services for increased safety and increased experience of feeling safe on and around the campus: 
@@ -14,25 +24,27 @@ The goal for the project is to design an Android application to connect Temple c
 - 
 
 ## Project Development Process
-Features will be added and tested separately as the app's functionality is expanding through the development timeframe. 
-Project Management tools will be utilized.
-Version Control tools will be utilized. 
-Team communication tools will be utilized to reduce the need for face to face meetings, as all team members have unique schedules and demands on their time. 
+Features were developed discretely, tested and then added to the app as functionality expanded through our develoment timeframe.
+Project Management tools were be utilized -- a Trello Board was used to establish and prioritize a backlog for Sprints
+Version Control tools will be utilized -- GitHub repository accessed by all team members
+Team communication tools will be utilized to reduce the need for face to face meetings, as all team members have unique schedules and demands on their time -- What's App initially, them moved to Discord where both text and voice were used and files and images shared regularly. We broke out subteams as well when appropriate within our Discord group. 
 
 ## Evolution of the Project
-TU MapSafe was initially proposed as a Mobile App with the intention to code the project in Android Studio. Very early in the first sprint, the collective decision was made to switch the project plan to instead design a web app. This decision was unanimously agreed to, and the flexibility and communication of the entire team made this quick redirection possible and successful.
+TU MapSafe was initially proposed as a Mobile App with the intention to code the project in Android Studio. Very early in the first sprint, the collective decision was made to switch the project plan to design a web app, as opposed to the Mobile App. 
+This decision was unanimously agreed to, and the flexibility and communication of the entire team made this quick redirection possible and successful.
 
+## Teamwork
+The team established multiple open and accessible communication channels with one another from day one. All team members had voice, email and Discord access to one another. No communication problems changed the 
+This focus on keeping constant communication, as well as the early group decision to pivot to a web app were unquestionably critical factors to the ultimate success of the team's efforts to achieve a working product aligned with the initial vision which our group had formulated together. 
 
-
-## Project Evolution
-Initially the project was proposed and conceived as a Mobile App to be built in Android Studio.
-Early in the first sprint the decision was made to switch our project concept to build a web application instead of an Android application. The excellent communication and flexibility of all group members allowed for this unanimous decision to be reached quickly and collectively. The team established multiple open and accessible communication channels with one another from day one. This focus on keeping constant communication, and also this decision to pivot to a web app were unquestionably critical factors to the ultimate success of the team's efforts in achieving a working product aligned with the initial vision our group had crafted. 
-
-## Use Case Diagram
+## Final Use Case Diagram from Proposal 
 ![UML UseCase Diagram](MapSafe3.PNG)
 
+## Initial Use Case Diagram from Proposal 
+![UML UseCase Diagram](MapSafe4.PNG)
+
 ## Required Skills and Resources
-The group will need people with (or willing to acquire) experience in the following areas:
+The group required experience (or acquiring experience) in the following areas:
 - coding Angular apps
 - user interfaces 
 - mapping applications
@@ -41,14 +53,17 @@ The group will need people with (or willing to acquire) experience in the follow
 - user experience design
 - visual design particularly in relation to website best practices
 
-The project will uses technogies and resources including:
-- Angular
+The project development and project itself utilize the following technogies and resources:
+- Angular Framework 
 - Typescript
-- html and css
-- and 3rd party app interfacing tools for map rendering (specifics to be determined)
+- html
+- css using Bootstrap
+- mapping was done using Angular Google Maps (agm)
+- the alerts database for storing TU alert messages uses Firebase
+- Python was used to parse emails in order to grab the alerts from an email account estabished for TUmapsafe
+
 
 ## Project Vision
-
 FOR Temple University members WHO want to feel more secure, TU MapSafe is an application THAT can more intuitively and effortlessly interpret TU Alerts and provide access to Temple Campus Police.
 UNLIKE the existing campus alert notification system, OUR PRODUCT provides a GUI that makes clear to the user their proximity to the incident, threat, etc. so that they can react accordingly. 
 
