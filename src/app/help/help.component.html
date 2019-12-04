@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <body>
-<div class="container pb-5" id="contactComponent">
+<div class="container pb-5" id="helpComponent">
    
    <h2  class ="back">How can we help?</h2>
    <div class="vision">
@@ -20,28 +20,28 @@
 
     <h2 style="text-align: left;" class="back"> Frequently Asked Questions</h2>
     
-      <accordion [isAnimated]="true" >
+      <accordion id="accordian" [isAnimated]="true" >
             <accordion-group >
-               <button class="btn btn-link" accordion-heading type="button">
+               <button id="accordItem" class="btn btn-link" accordion-heading type="button">
                      1. Where can I find Crime log? 
                </button>
                       You can find Crime Log on Temple officle Website Or 
-                      you can <a href="https://safety.temple.edu/reports-logs/crime-log"> Click Here</a>
+                      you can <a href="https://safety.temple.edu/reports-logs/crime-log" style="text-decoration: none;"> Click Here</a>
             </accordion-group>
             <accordion-group>
-               <button class="btn btn-link" accordion-heading type="button">
+               <button id="accordItem" class="btn btn-link" accordion-heading type="button">
                      2. Where can I find the TU Map?
                </button>
                        The TU Map is Located under Home Page.
             </accordion-group>
             <accordion-group>
-               <button class="btn btn-link" accordion-heading type="button">
+               <button id="accordItem" class="btn btn-link" accordion-heading type="button">
                      3. Where can I find the History of alerts?
                </button>
                         All the past crimes and alerts are located under History page.
             </accordion-group>
             <accordion-group>
-                  <button class="btn btn-link" accordion-heading type="button">
+                  <button id="accordItem" class="btn btn-link" accordion-heading type="button">
                      4. Where can I find Emergency Call list and locations info?
                   </button>
                         You can select Contact page.
@@ -50,10 +50,10 @@
          </accordion>
          <h2>For more help, Call or Email</h2>
          <ul class="list-group">
-               <a href="tel:+1-215-123-4567">
+               <a id="accordItem" href="tel:+1-215-123-4567">
                  <li class="list-group-item">Call Help desk</li>
                 </a>
-                <a href="mailto:police@temple.edu">
+                <a id="accordItem" href="mailto:police@temple.edu">
                      <li class="list-group-item">Send email to Help Desk</li>
                </a>
           </ul>

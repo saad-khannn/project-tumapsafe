@@ -1,14 +1,27 @@
-#contactComponent {
-    background-color: rgb(248, 240, 240);
+#helpComponent {
+    background-color: white;
     
 }
 .vision:hover {
-    background-color: black;
+    background-color: rgb(152, 31, 50);
     color: white;
-    margin: 0px;
     padding: 10px;
     transition: all 0.3s ease-in-out;
-  } 
+} 
+
+.vision{ 
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in;
+  
+
+}
+#accordItem { 
+    color: black;
+    text-decoration: none;
+
+}
 
 .qut {
     background-color: black;
