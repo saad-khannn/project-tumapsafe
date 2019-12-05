@@ -7,7 +7,9 @@ export interface AlertsEntity {
     Date: string;
     Description: string;
     Id: number;
+    Latitude: number;
     Location: string;
+    Longitude: number;
     Time: string;
 }
 export interface AlertModel {

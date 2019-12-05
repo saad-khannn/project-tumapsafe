@@ -27,23 +27,6 @@ export class HistoryComponent implements OnInit {
       this.Lats = [];
       this.Longs = [];
       this.Alerts = data as Alerts[];
-      this.Locations = [];
-      this.Markers = new Array<MyMarkers>(this.Alerts.length);
-      const keys = Object.keys(this.Alerts);
-      let key = '';
-      for (let j = 0 ; j < this.Alerts.length; j ++ ) {
-        key = keys[j];
-        this.Locations[j] = this.Alerts[key].Location;
-        //this.Markers[j] = this.Alerts[key].Location;
-      }
-      console.log(this.Markers);
-      let i = 0;
-      for (const location of this.Locations) {
-        //console.log(location);
-        this.returnLat(location, i);
-        this.returnLong(location, i);
-        i++;
-      }
     });
     this.getUserLocation();
   }
