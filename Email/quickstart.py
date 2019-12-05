@@ -198,7 +198,7 @@ def main():
         getCrimeLocation(service, 'me', threads)
 
     # Prints the TUlalerts (Mostly for testing purposes)
-    printAlerts()
+    #printAlerts()
 
 
 if __name__ == '__main__':
