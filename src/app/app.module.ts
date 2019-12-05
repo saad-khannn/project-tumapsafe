@@ -1,12 +1,7 @@
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
-
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { environment } from '../environments/environment';
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,7 +41,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
       apiKey: 'AIzaSyCh8_uCyeKA2fzIVlNmJYdjqy6C8Zi7A9M'
     }),
 
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     AccordionModule.forRoot()

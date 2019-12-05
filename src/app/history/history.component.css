@@ -11,3 +11,10 @@ agm-map {
     font-family: sans-serif;
     font-size: large;
 }
+
+#histContainer {
+    background-color:#981F32;
+    margin-top: 5px;
+    color: white;
+    margin-bottom: 5px;
+}
