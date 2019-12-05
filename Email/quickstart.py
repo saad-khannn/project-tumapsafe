@@ -9,6 +9,7 @@ import email
 from apiclient import errors
 from TUalert import TUalert
 from firebase import firebase
+import requests
 
 # Array that holds all of the TUalerts
 alertList = []
@@ -17,9 +18,27 @@ printAlert = TUalert.printAlert
 # Firebase database setup
 firebase = firebase.FirebaseApplication(
     "https://tumapsafe-1cd6f.firebaseio.com/", None)
-
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
+# Google Maps API key
+api_key = 'AIzaSyAo7nPDJVnoGxKpzCyRXBIxv-oPCd-XE2c'
+
+# Gets the lat and long of an address
+
+
+def getLatLong(alert, address):
+    temp = address.lstrip()
+    temp2 = temp.replace(' ', '+')
+    url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + temp2 + ',+Philadelphia, Ca&key=' + api_key
+
+    response = requests.get(url)
+
+    # Get the json information from your response object
+    response_json = response.json()
+
+    # Set the long and lat values
+    alert.lat = response_json['results'][0]['geometry']['location']['lat']
+    alert.long = response_json['results'][0]['geometry']['location']['lng']
 
 # Prints out all of the current TUalerts from the alertList array
 
@@ -69,7 +88,9 @@ def getDateTime(service, user_id, msg_id, alert):
             'AlertType': alert.alert,
             'Location': alert.location,
             'Id': alert.id,
-            'Description': alert.description
+            'Description': alert.description,
+            'Longitude': alert.long,
+            'Latitude': alert.lat
         }
 
        # Puts the TUalert into the database
@@ -87,13 +108,15 @@ def getCrimeLocation(service, user_id, threads):
     for thread in threads:
         tdata = service.users().threads().get(
             userId='me', id=thread['id']).execute()
-        alert = TUalert('', '', '', '', '', totalAlerts)
 
         temp = thread['snippet']
+        # Creates TUalert object
+        alert = TUalert('', '', '', '', '', totalAlerts)
+
         # Checks to see if alert is already in the database
         check = firebase.get('Alerts/' + str(alert.id) + '/', None)
 
-        if check['Id'] == None:
+        if check == None:
             # If the TUalert is a crime
             if 'Use caution.' in temp:
                 alert.alert = 'Crime'
@@ -101,18 +124,22 @@ def getCrimeLocation(service, user_id, threads):
                 temp3 = temp2[1].split('.')
                 # Location of TUalert
                 alert.location = temp3[0]
+                # Gets the lat and long of alert
+                getLatLong(alert, alert.location)
                 # Crime description of TUalert
                 alert.crime = temp2[0].split(',')[1]
                 # Description of the TUalert
                 alert.description = alert.crime + 'at' + alert.location + \
                     ". Police are responding. Use caution."
 
-                # If the TUalert is an all clear message
+            # If the TUalert is an all clear message
             elif 'All clear' in temp:
                 alert.alert = 'All Clear'
                 temp2 = temp.split('in the area of')
                 # Location of TUalert
                 alert.location = temp2[1].split('.')[0]
+                # Gets the lat and long of alert
+                getLatLong(alert, alert.location)
                 # Crime type does not apply for this type of TUalert
                 alert.crime = 'N/A'
                 # Description of TUalert
@@ -171,7 +198,7 @@ def main():
         getCrimeLocation(service, 'me', threads)
 
     # Prints the TUlalerts (Mostly for testing purposes)
-    # printAlerts()
+    printAlerts()
 
 
 if __name__ == '__main__':
