@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
       this.Alerts = data;
       //console.log(this.Alerts);
       const keys = Object.keys(this.Alerts);
-      const k = keys[4];
+      const k = keys[0];
       this.formatAlertInfo(this.Alerts[k].Description, this.Alerts[k].Date, this.Alerts[k].Time);
       this.alertLat = this.Alerts[k].Latitude;
       this.alertLong = this.Alerts[k].Longitude;
@@ -68,10 +68,8 @@ export class HomeComponent implements OnInit {
 
 
   private formatAlertInfo(description: string, date: string, time: string) {
-    this.alertDescription = description;
-    this.alertDate = date;
+    this.alertDescription = description.split(".")[0];
+    this.alertDate = date.substring(date.indexOf(",") + 1);
     this.alertTime = time;
-
-
   }
 }

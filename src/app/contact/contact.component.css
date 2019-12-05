@@ -30,3 +30,7 @@ a{
     background-color: rgb(152, 31, 50);
     box-shadow: 50px;
 }
+
+ul .list-group-item { 
+    font-family: sans-serif;
+}
