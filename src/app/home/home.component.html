@@ -1,16 +1,16 @@
+<div class="container pb-3 pt-3" style="background-color: white;">
 <div class="container">
 
   <div class="row mb-5 mt-5">
-    <div class="col-12">
+    <div class="col-12 pb-3 pt-3" style="background-color:#981F32;">
       <agm-map [zoom]="16" [latitude]="userLat" [longitude]="userLong">
+        
         <agm-marker [latitude]="userLat" [longitude]="userLong">
-
           <agm-info-window>
               <div id="info-text">You are here.</div>
           </agm-info-window>
         </agm-marker>
 
-      
         <agm-marker [latitude]="alertLat" [longitude]="alertLong" [iconUrl]="alertIcon">
           <agm-info-window>
               <div id="info-text" style="text-align: center;"> {{ alertDescription }} </div>
@@ -23,12 +23,10 @@
         [longitude]="alertLong" 
         [radius]="175" 
         [fillColor]="'red'">
-        </agm-circle>
-        
+        </agm-circle>        
        
       </agm-map>
     </div>
-
-
-
+  </div>
+</div>
 </div>
