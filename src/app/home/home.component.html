@@ -3,9 +3,9 @@
 
   <div class="row mb-5 mt-5">
     <div class="col-12 pb-3 pt-3" style="background-color:#981F32;">
-      <agm-map [zoom]="16" [latitude]="userLat" [longitude]="userLong">
-        
-        <agm-marker [latitude]="userLat" [longitude]="userLong">
+      
+      <agm-map [zoom]="16" [latitude]="userLat" [longitude]="userLong">  
+        <agm-marker [latitude]="userLat" [longitude]="userLong" [iconUrl]="userIcon">
           <agm-info-window>
               <div id="info-text">You are here.</div>
           </agm-info-window>

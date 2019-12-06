@@ -14,22 +14,23 @@ import { UtilsService } from '../utils.service';
 })
 
 export class HomeComponent implements OnInit {
-  constructor(private dataService: DataService, db: AngularFireDatabase, utils: UtilsService) {
+  constructor(private dataService: DataService, db: AngularFireDatabase, private utils: UtilsService) {
     db.list('/Alerts').valueChanges().subscribe(data => {
       this.Alerts = data;
-      //console.log(this.Alerts);
       const keys = Object.keys(this.Alerts);
       const k = keys[0];
-      this.formatAlertInfo(this.Alerts[k].Description, this.Alerts[k].Date, this.Alerts[k].Time);
+      this.utils.sortDates(this.Alerts);
       this.alertLat = this.Alerts[k].Latitude;
       this.alertLong = this.Alerts[k].Longitude;
+      this.alertDescription = this.Alerts[k].Description.split(".")[0];
+      this.alertDate = this.Alerts[k].Date.substring(this.Alerts[k].Date.indexOf(",") + 1);
+      this.alertTime = this.Alerts[k].Time;
     });
   }
 
   userLat: number;
   userLong: number;
   Alerts: Alerts[];
-  location: AlertLocation;
   alertLat: number;
   alertLong: number;
   alertDescription: string;
