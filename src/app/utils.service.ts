@@ -27,8 +27,8 @@ export class UtilsService {
   public formatDays(day1: string, day2: string) {
     let new1 = '';
     let new2 = '';
-    console.log('day 1: ' + day1);
-    console.log('day 2: ' + day2);
+    //console.log('day 1: ' + day1);
+    //console.log('day 2: ' + day2);
     for (let char of day1) {
       if (!(char === ',')) {
         new1 += char;

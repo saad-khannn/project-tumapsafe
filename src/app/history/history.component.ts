@@ -14,19 +14,12 @@ export class HistoryComponent implements OnInit {
   userLat: number;
   userLong: number;
   Alerts: Alerts[];
-  Locations: string[];
-  Lats: number[];
-  Longs: number[];
-  AlertLocation: number;
-  Markers: MyMarkers[];
 
   constructor(private dataService: DataService, private db: AngularFireDatabase, private utils: UtilsService) {
   }
 
   ngOnInit() {
     this.db.list('/Alerts').valueChanges().subscribe(data => {
-      this.Lats = [];
-      this.Longs = [];
       this.Alerts = data as Alerts[];
       this.utils.sortDates(this.Alerts);
     });
@@ -41,25 +34,4 @@ export class HistoryComponent implements OnInit {
       });
     }
   }
-
-  returnLat(location: string, index: number) {
-    if (location === 'N/A'){
-      this.Lats[index] = -1;
-    } else {
-      this.dataService.getAlertLocation(location).subscribe ( res => {
-        this.Lats[index] = res.results[0].geometry.location.lat;
-      });
-    }
-  }
-
-  returnLong(location: string ,index: number) {
-    if (location === 'N/A'){
-      this.Longs[index] = -1;
-    } else {
-      this.dataService.getAlertLocation(location).subscribe ( res => {
-        this.Longs[index] = res.results[0].geometry.location.lng;
-      });
-    }
-  }
-
 }
