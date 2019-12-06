@@ -56,9 +56,9 @@ The group required experience (or acquiring experience) in the following areas:
 The project development and project itself utilize the following technogies and resources:
 - Angular Framework 
 - Typescript
-- html
-- css using Bootstrap
-- mapping was done using Angular Google Maps (agm)
+- HTML
+- CSS using Bootstrap
+- mapping was done using Angular Google Maps (AGM)
 - the alerts database for storing TU alert messages uses Firebase
 - Python was used to parse emails in order to grab the alerts from an email account estabished for TUmapsafe
 
@@ -70,7 +70,8 @@ UNLIKE the existing campus alert notification system, OUR PRODUCT provides a GUI
 ## Personas 
 The following user personas represent the slight variations in the use cases and greatest benefit to user to be gained from our application. They are all Temple Campus community members, but their needs may vary slightly and our research from User Experience Design surveying indicates that these different user populations report different levels of comfort/safety and different levels of safety on and around the campus. 
 
-### Angela 
+## Persona 1
+### Angela
 Angela is a sophomore at Temple University and she is a Film and Media Arts major. 
 In her free time, Angela likes to watch foreign movies, come up with short film ideas, and play video games. 
 She also has an active social life and enjoys getting out and making the most of her college years.
@@ -109,9 +110,13 @@ Tam is a freshamn transfer student from India he is new to America and is excite
 ## Persona 6
 ![User Persona Prof](Eric.png)
 
+## TU MapSafe Project Team
+Cat Schaper
 
+Joe Ciccone
 
+Jay Patel
 
+Meet Patel 
 
-
-
+Saad Khan
