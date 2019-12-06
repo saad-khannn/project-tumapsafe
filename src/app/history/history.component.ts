@@ -3,6 +3,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { DataService } from '../data.service';
 import { Alerts, AlertModel } from '../models/alert.model';
 import { MyMarkers } from '../models/marker.model';
+import { UtilsService } from '../utils.service';
 
 @Component({
   selector: 'app-history',
@@ -19,7 +20,7 @@ export class HistoryComponent implements OnInit {
   AlertLocation: number;
   Markers: MyMarkers[];
 
-  constructor(private dataService: DataService, private db: AngularFireDatabase) {
+  constructor(private dataService: DataService, private db: AngularFireDatabase, private utils: UtilsService) {
   }
 
   ngOnInit() {
@@ -27,6 +28,7 @@ export class HistoryComponent implements OnInit {
       this.Lats = [];
       this.Longs = [];
       this.Alerts = data as Alerts[];
+      this.utils.sortDates(this.Alerts);
     });
     this.getUserLocation();
   }
