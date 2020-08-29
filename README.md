@@ -1,6 +1,8 @@
 # TU MapSafe
 ## A Web Application for the Temple Community to increase the utility and value of Temple's Existing Safety and Security Resources. 
 
+### The application will be available here while the project is live: https://tumapsafe-1cd6f.firebaseapp.com/
+
 ### The key novel features of TU MapSafe are the following:
 - present TU alerts through a map interface 
 - provide options to directly place call from the app to the Temple Police, the Philadelphia Police and the Temple Walking Escort program
